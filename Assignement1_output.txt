@@ -1,0 +1,32 @@
+Running] cd "e:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA\" && g++ Assignment1.cpp -o Assignment1 && "e:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA\"Assignment1
+ ------------------- cutomer orders ---------------
+
+Order id :O01 |Timestamps :1700000100000
+Order id :O02 |Timestamps :1699999999000
+Order id :O03 |Timestamps :1700000200000
+Order id :O04 |Timestamps :1699999950000
+Order id :O05 |Timestamps :1700000300000
+Order id :O06 |Timestamps :1700000000000
+Order id :O07 |Timestamps :1699999900000
+Order id :O08 |Timestamps :1700000500000
+Order id :O09 |Timestamps :1699999850000
+Order id :O10 |Timestamps :1700000400000
+Order id :O11 |Timestamps :1700000000000
+
+ ------------------- sorted orders ---------------
+
+Order id :O09 | Timestamps :1699999850000
+Order id :O07 | Timestamps :1699999900000
+Order id :O04 | Timestamps :1699999950000
+Order id :O02 | Timestamps :1699999999000
+Order id :O06 | Timestamps :1700000000000
+Order id :O11 | Timestamps :1700000000000
+Order id :O01 | Timestamps :1700000100000
+Order id :O03 | Timestamps :1700000200000
+Order id :O05 | Timestamps :1700000300000
+Order id :O10 | Timestamps :1700000400000
+Order id :O08 | Timestamps :1700000500000
+
+Time Taken: 0.0328 ms
+
+[Done] exited with code=0 in 0.999 seconds

@@ -1,0 +1,56 @@
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA> .\Assignement2.exe                                                                              
+Sort movies by (rating/year/watch): rating
+
+Movies sorted by rating:
+Title           Rating   Year   Watch 
+-------------------------------------------
+Titanic         7.8      1997   12000 
+Avatar          7.9      2009   15000 
+Up              8.2      2009   5400  
+Joker           8.4      2019   8200  
+Coco            8.4      2017   4700  
+Gladiator       8.5      2000   6600  
+Avengers        8.5      2012   9500  
+Interstellar    8.6      2014   7300  
+Matrix          8.7      1999   9800  
+Inception       8.8      2010   8700  
+
+Time taken by QuickSort: 0.264 ms
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA> 
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA> .\Assignement2.exe
+Sort movies by (rating/year/watch): year
+
+Movies sorted by year:
+Title           Rating   Year   Watch 
+-------------------------------------------
+Titanic         7.8      1997   12000 
+Matrix          8.7      1999   9800  
+Gladiator       8.5      2000   6600  
+Up              8.2      2009   5400  
+Avatar          7.9      2009   15000 
+Inception       8.8      2010   8700  
+Avengers        8.5      2012   9500  
+Interstellar    8.6      2014   7300  
+Coco            8.4      2017   4700  
+Joker           8.4      2019   8200  
+
+Time taken by QuickSort: 0.024 ms
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA> .\Assignement2.exe
+Sort movies by (rating/year/watch): watch
+
+Movies sorted by watch:
+Title           Rating   Year   Watch
+-------------------------------------------
+Coco            8.4      2017   4700
+Up              8.2      2009   5400  
+Gladiator       8.5      2000   6600  
+Interstellar    8.6      2014   7300  
+Joker           8.4      2019   8200
+Inception       8.8      2010   8700  
+Avengers        8.5      2012   9500  
+Matrix          8.7      1999   9800
+Titanic         7.8      1997   12000 
+Avatar          7.9      2009   15000 
+
+Time taken by QuickSort: 0.015 ms
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA>

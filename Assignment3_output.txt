@@ -1,0 +1,97 @@
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA> .\Assignment3.exe 
+ -- Emergency Relief supply Loading -- 
+ Enter the number of relief items:5
+
+ Item #1
+Name :Medical Kit
+ Weight (kg) :10
+Utility Value: 500
+Divisible ? ( 1= yes ,0 = no)0
+
+ Item #2
+Name :Rice Bags
+ Weight (kg) :20
+Utility Value: 300
+Divisible ? ( 1= yes ,0 = no)1
+
+ Item #3
+Name :Bottled Water
+ Weight (kg) :15
+Utility Value: 200
+Divisible ? ( 1= yes ,0 = no)1
+
+ Item #4
+Name :Blankets
+ Weight (kg) :12
+Utility Value: 250
+Divisible ? ( 1= yes ,0 = no)0
+
+ Item #5
+Name :Canned Food
+ Weight (kg) :18
+Utility Value: 270
+Divisible ? ( 1= yes ,0 = no)1
+ Enter the boad capacity (kg) 40
+Items loaded on boat 
+- Medical Kit: 10.00 kg, Utility : 500.00 
+- Blankets: 12.00 kg, Utility : 250.00 
+ -Rice Bags : 18.00 kg, Utility: 270.00 
+
+ Total utility carried : 1020.00 
+Executiond time : &.3f ms 
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA>
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA> .\Assignment3.exe
+ -- Emergency Relief supply Loading -- 
+ Enter the number of relief items:6
+
+ Item #1
+Name :Medical Kit
+ Weight (kg) :12
+Utility Value: 600
+Divisible ? ( 1= yes ,0 = no)0
+
+ Item #2
+Name :Rice Bags
+ Weight (kg) :25
+Utility Value: 350
+Divisible ? ( 1= yes ,0 = no)1
+
+ Item #3
+Name :Water Bottles
+ Weight (kg) :10
+Utility Value: 200
+Divisible ? ( 1= yes ,0 = no)1
+
+ Item #4
+Name :Blankets
+ Weight (kg) :15
+Utility Value: 300
+Divisible ? ( 1= yes ,0 = no)0
+
+ Item #5
+Name :Canned Food
+ Weight (kg) :20
+Utility Value: 280
+Divisible ? ( 1= yes ,0 = no)1
+
+ Item #6
+Name :First Aid Box
+ Weight (kg) :8
+Utility Value: 400
+Divisible ? ( 1= yes ,0 = no)0
+ Enter the boad capacity (kg) 50
+Items loaded on boat 
+- Medical Kit: 12.00 kg, Utility : 600.00 
+- First Aid Box: 8.00 kg, Utility : 400.00        
+ -Water Bottles : 10.00 kg, Utility: 200.00       
+- Blankets: 15.00 kg, Utility : 300.00 
+ -Rice Bags : 5.00 kg, Utility: 70.00
+
+ Total utility carried : 1570.00 
+Executiond time : &.3f ms
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA>

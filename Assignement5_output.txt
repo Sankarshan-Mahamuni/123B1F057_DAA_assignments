@@ -1,0 +1,19 @@
+Enter number of nodes in multistage graph: 8
+Enter number of edges: 10
+Enter edges as: from to cost
+0 1 1
+0 2 2
+1 3 3
+1 4 2
+2 4 4
+2 5 3
+3 6 2
+4 6 1
+5 7 5
+6 7 3
+Enter source node: 0
+Enter destination node: 7
+
+--- Optimal Delivery Route ---
+Path: 0 -> 1 -> 4 -> 6 -> 7
+Execution time: 0.021 ms
