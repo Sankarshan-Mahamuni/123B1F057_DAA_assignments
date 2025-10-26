@@ -1,0 +1,19 @@
+========== RELIEF TRUCK OPTIMIZATION ==========
+Truck Capacity: 50 kg
+------------------------------------------------
+Item           Weight    Utility   Perishable 
+------------------------------------------------
+Medicine       10        60        Yes         
+Food           20        100       Yes         
+Water          15        50        Yes         
+Blankets       30        120       No          
+Tents          25        80        No          
+
+--- Selected Items ---
+  • Food (Wt: 20kg, Utility: 100, Perishable)
+  • Medicine (Wt: 10kg, Utility: 60, Perishable)
+  • Blankets (Wt: 30kg, Utility: 120, No)
+
+Total Weight Loaded: 50 kg
+Maximum Utility Achieved: 280
+===============================================
