@@ -1,0 +1,17 @@
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA> cd Assignment8
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA\Assignment8> .\Assignment8.exe
+=== SwiftShip ΓÇô Optimal Delivery Route Finder ===
+Enter number of cities: 4
+Enter cost matrix (use 9999999 for no direct route):
+9999999 10 15 20
+10 9999999 35 25
+15 35 9999999 30
+20 25 30 9999999
+
+================= SwiftShip Route Optimization =================
+Optimal Delivery Route (City Indexes): 0 1 3 2 0 
+Minimum Total Fuel Cost: 80
+Estimated Delivery Time (km proxy): 220
+Execution Time: 0.245 ms
+===============================================================
+PS E:\Sankarshan_Quick_Required\College Stuff\3rd year\SEM 5\DAA\Assignment8> 
