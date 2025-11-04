@@ -22,9 +22,9 @@ public:
 
 class ReliefTruckOptimizer {
 private:
-    int capacity;                       // Maximum weight truck can carry
-    vector<Item> items;                 // All available items
-    vector<vector<int>> dp;             // DP table for 0/1 Knapsack
+    int capacity;                       
+    vector<Item> items;                 
+    vector<vector<int>> dp;             
 
 public:
     ReliefTruckOptimizer(int W, const vector<Item>& itemsList)
@@ -32,11 +32,10 @@ public:
         dp.assign(items.size() + 1, vector<int>(W + 1, 0));
     }
 
-    // Sort items: prioritize perishable items, then by utility/weight ratio
     void sortItems() {
         sort(items.begin(), items.end(), [](const Item &a, const Item &b) {
             if (a.perishable != b.perishable)
-                return a.perishable > b.perishable; // perishable first
+                return a.perishable > b.perishable; 
             double ratioA = (double)a.utility / a.weight;
             double ratioB = (double)b.utility / b.weight;
             return ratioA > ratioB;
@@ -69,7 +68,7 @@ public:
         return chosen;
     }
 
-    // Display final result
+  
     void displayResult() {
         int N = items.size();
         computeOptimalSelection();

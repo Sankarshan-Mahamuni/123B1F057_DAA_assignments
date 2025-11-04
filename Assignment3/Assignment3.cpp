@@ -1,3 +1,6 @@
+// Name: Sankarshan Satish Mahamuni
+// PRN : 123B1F057
+
 /*
 Scenario: Emergency Relief Supply Distribution
 A devastating flood has hit multiple villages in a remote area, and the government, along
@@ -47,7 +50,7 @@ int main(){
     cout<< " -- Emergency Relief supply Loading -- \n";
     cout<< " Enter the number of relief items:";
     cin>>n;
-    cin.ignore(); // consume line 
+    cin.ignore(); 
 
     if (n<=0){
         cout<< "No items to load . Exiting  \n ";
@@ -87,7 +90,7 @@ int main(){
         return 0;
     }
     auto start = chrono :: high_resolution_clock::now();
-    // sort items by utility per kg in descending order 
+  
     sort(items.begin(),items.end(),[](const Item &a,const Item&b){
         return a.utilityPerKg() > b.utilityPerKg();
     });

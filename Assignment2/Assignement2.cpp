@@ -19,7 +19,7 @@ public:
         : title(t), imdbRating(r), releaseYear(y), watchCount(w) {}
 };
 
-// Partition function for QuickSort
+
 int partition ( vector<Movie> & movies,int low,int high,const string &sortBy){
     Movie pivot =movies[low];
     int i=low+1;
@@ -46,7 +46,6 @@ int partition ( vector<Movie> & movies,int low,int high,const string &sortBy){
 
 }
 
-// QuickSort function
 void quickSort(vector<Movie>& movies, int low, int high, const string& sortBy) {
     if (low < high) {
         int pivotIndex = partition(movies, low, high, sortBy);
@@ -55,7 +54,7 @@ void quickSort(vector<Movie>& movies, int low, int high, const string& sortBy) {
     }
 }
 
-// Sample movie data
+
 vector<Movie> sampleMovies() {
     return {
         {"Avengers", 8.5, 2012, 9500},

@@ -32,11 +32,10 @@ closures or rerouting requirements).
 #include <bits/stdc++.h>
 using namespace std;
 
-// ------------------- Edge Class -------------------
 class Edge {
 public:
-    int to;      // destination node
-    int cost;    // cost or travel time
+    int to;      
+    int cost;    
 
     Edge(int to, int cost) {
         this->to = to;
@@ -44,11 +43,10 @@ public:
     }
 };
 
-// ------------------- LogisticsOptimizer Class -------------------
 class LogisticsOptimizer {
 private:
     vector<vector<Edge>> graph;
-    int N; // number of nodes
+    int N; 
 
 public:
     LogisticsOptimizer(int nodes) {
@@ -56,19 +54,17 @@ public:
         graph.resize(N);
     }
 
-    // Add a directed edge
     void addEdge(int from, int to, int cost) {
         graph[from].push_back(Edge(to, cost));
     }
 
-    // Dynamic Programming to find shortest path in multistage graph
+    
     vector<int> findShortestPath(int source, int destination) {
         vector<int> dist(N, INT_MAX);
         vector<int> nextNode(N, -1);
 
-        dist[destination] = 0; // cost to reach destination from itself = 0
+        dist[destination] = 0; 
 
-        // Go from second last node backward
         for (int i = N - 2; i >= 0; i--) {
             for (const auto &e : graph[i]) {
                 if (dist[e.to] != INT_MAX && e.cost + dist[e.to] < dist[i]) {
@@ -81,7 +77,6 @@ public:
         return nextNode;
     }
 
-    // Print the optimal path
     void printPath(int source, const vector<int> &nextNode) {
         int node = source;
         cout << node;
@@ -93,7 +88,7 @@ public:
     }
 };
 
-// ------------------- Main Function -------------------
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);

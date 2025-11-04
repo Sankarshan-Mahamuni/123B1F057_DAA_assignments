@@ -27,7 +27,6 @@ based on real-time traffic conditions, ensuring minimal response time to emergen
 #include <bits/stdc++.h>
 using namespace std;
 
-// ------------------- Road Class -------------------
 class Road {
 public:
     int destination;
@@ -39,7 +38,7 @@ public:
     }
 };
 
-// ------------------- TrafficSystem Class -------------------
+
 class TrafficSystem {
 private:
     vector<vector<Road>> graph;
@@ -51,13 +50,12 @@ public:
         graph.resize(n);
     }
 
-    // Add a road (undirected)
     void addRoad(int u, int v, int t) {
         graph[u].push_back(Road(v, t));
         graph[v].push_back(Road(u, t));
     }
 
-    // Dijkstra’s Algorithm
+  
     vector<int> dijkstra(int start, vector<int>& previousNode) {
         int n = numIntersections;
         vector<int> travelTime(n, INT_MAX);
@@ -89,7 +87,7 @@ public:
         return travelTime;
     }
 
-    // Print path using recursion
+
     void printPath(const vector<int>& previousNode, int destination) {
         if (previousNode[destination] == -1) {
             cout << destination;
@@ -99,7 +97,6 @@ public:
         cout << " -> " << destination;
     }
 
-    // Find nearest hospital node
     int findNearestHospital(const vector<int>& travelTime, const vector<int>& hospitals) {
         int nearest = -1, minTime = INT_MAX;
         for (int h : hospitals) {
@@ -112,7 +109,7 @@ public:
     }
 };
 
-// ------------------- Main Function -------------------
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
