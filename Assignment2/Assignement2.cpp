@@ -1,99 +1,142 @@
 // Name: Sankarshan Satish Mahamuni
 // PRN : 123B1F057
-
-#include <iostream>
-#include <vector>
-#include <string>
-#include <chrono>
-#include <algorithm>
+/* Movie Recommendation System Optimization
+A popular OTT platform, StreamFlix, offers personalized recommendations by sorting movies
+based on user preferences, such as IMDB rating, release year, or watch time popularity.
+However, during peak hours, sorting large datasets slows down the system.
+As a backend engineer, you must:
+● Implement Quicksort to efficiently sort movies based on various user-selected
+parameters.
+● Handle large datasets containing of movies while maintaining fast response times
+*/
+#include<iostream>
+#include<vector>
+#include<sstream>
+#include<fstream>
 using namespace std;
 
 class Movie {
-public:
-    string title;
-    double imdbRating;
-    int releaseYear;
-    int watchCount;
+    public:
+        string title;
+        float imdb_rating;
+        int release_year;
+        int popularity;
 
-    Movie(string t, double r, int y, int w)
-        : title(t), imdbRating(r), releaseYear(y), watchCount(w) {}
+        Movie(string title,float imdb_rating, int release_year, int popularity){
+            this->title=title;
+            this->imdb_rating=imdb_rating;
+            this->release_year=release_year;
+            this->popularity=popularity;
+        }
+
+        void Print_movie(){
+            cout<<"---------------------------------"<<endl;
+            cout<<"Movie Name :"<<title<<endl;
+            cout<<"Release Year :"<<release_year<<endl;
+            cout<<"IMDB Rating :"<<imdb_rating<<endl;
+            cout<<"Popularity :"<<popularity<<endl;
+            cout<<"----------------------------------"<<endl;
+            cout<<"\n";
+        }
 };
 
+class Operations{
+    public:
+    vector<Movie> Load_movies(string filepath){
+        vector<Movie> movies;
+        ifstream file(filepath);
+        if (! file.is_open()){
+            cout<< " file not opened error !!"<<filepath<<endl;
+        }
+        string line;
+        getline(file,line); //consume header file
+        while (getline(file,line)){
+            string title,imdb_rating_str,release_year_str,popularity_str;
+            stringstream ss(line);
+            getline(ss,title,',');
+            getline(ss,imdb_rating_str,',');
+            getline(ss,release_year_str,',');
+            getline(ss,popularity_str,',');
 
-int partition ( vector<Movie> & movies,int low,int high,const string &sortBy){
-    Movie pivot =movies[low];
-    int i=low+1;
-    int j=high;
-    while (i<=j){
-        if (sortBy =="rating"){
-            while (i<=high && movies[i].imdbRating<=pivot.imdbRating) i++;
-            while (j>=low && movies[j].imdbRating>pivot.imdbRating) j--;
+            float imdb_rating =stof(imdb_rating_str);
+            int  release_year =stoi(release_year_str);
+            int popularity =stoi(popularity_str);
+            
+            movies.push_back(Movie(title,imdb_rating,release_year,popularity));
         }
-        else if (sortBy == "year") {
-            while (i <= high && movies[i].releaseYear <= pivot.releaseYear) i++;
-            while (j >= low && movies[j].releaseYear > pivot.releaseYear) j--;
-        } else if (sortBy == "watch") {
-            while (i <= high && movies[i].watchCount <= pivot.watchCount) i++;
-            while (j >= low && movies[j].watchCount > pivot.watchCount) j--;
-        }
-        if (i< j){
+        file.close();
+        return movies;
+    }
+
+    void swap(Movie &a, Movie &b){
+        Movie temp =a;
+        a=b;
+        b=temp;
+        
+    }
+
+    int partition(vector<Movie>&movies,int l, int r, int parameter){
+        Movie pivot = movies[l];
+        int i=l+1;
+        int j= r;
+        while (i<j){
+            while (i<=r){
+                bool condition =false;
+                if (parameter == 1) condition= (movies[i].imdb_rating>pivot.imdb_rating);
+                else if (parameter ==2 )condition = movies[i].release_year> pivot.release_year;
+                else if (parameter ==3 )condition = movies[i].popularity > pivot.popularity;
+
+                if (condition) i++;
+                else break;
+            }
+
+            while (j>=l+1){
+                bool condition =false;
+                if (parameter ==1 ) condition = movies[j].imdb_rating < pivot.imdb_rating;
+                else if (parameter ==2) condition =movies[j].release_year < pivot.release_year;
+                else if (parameter ==3) condition =  movies[j].popularity < pivot.popularity;
+
+                if (condition) j--;
+                else break;
+
+            }
+
+            if (i<j)
             swap(movies[i],movies[j]);
         }
 
-    }
-    swap(movies[low],movies[j]);
-    return j;
+        swap(movies[l],movies[j]);
+        return j;
 
-}
-
-void quickSort(vector<Movie>& movies, int low, int high, const string& sortBy) {
-    if (low < high) {
-        int pivotIndex = partition(movies, low, high, sortBy);
-        quickSort(movies, low, pivotIndex - 1, sortBy);
-        quickSort(movies, pivotIndex + 1, high, sortBy);
-    }
-}
-
-
-vector<Movie> sampleMovies() {
-    return {
-        {"Avengers", 8.5, 2012, 9500},
-        {"Inception", 8.8, 2010, 8700},
-        {"Titanic", 7.8, 1997, 12000},
-        {"Matrix", 8.7, 1999, 9800},
-        {"Interstellar", 8.6, 2014, 7300},
-        {"Joker", 8.4, 2019, 8200},
-        {"Avatar", 7.9, 2009, 15000},
-        {"Gladiator", 8.5, 2000, 6600},
-        {"Up", 8.2, 2009, 5400},
-        {"Coco", 8.4, 2017, 4700}
-    };
-}
-
-int main() {
-    vector<Movie> movies = sampleMovies();
-    string sortBy;
-
-    cout << "Sort movies by (rating/year/watch): ";
-    cin >> sortBy;
-
-    transform(sortBy.begin(), sortBy.end(), sortBy.begin(), ::tolower);
-    if (sortBy != "rating" && sortBy != "year" && sortBy != "watch") {
-        cout << "Invalid sort option!" << endl;
-        return 0;
     }
 
-    auto start = chrono::high_resolution_clock::now();
-    quickSort(movies, 0, movies.size() - 1, sortBy);
-    auto end = chrono::high_resolution_clock::now();
-    chrono::duration<double, milli> timeTaken = end - start;
 
-    cout << "\nMovies sorted by " << sortBy << ":\n";
-    printf("%-15s %-8s %-6s %-6s\n", "Title", "Rating", "Year", "Watch");
-    cout << "-------------------------------------------\n";
-    for (const auto& m : movies) {
-        printf("%-15s %-8.1f %-6d %-6d\n", m.title.c_str(), m.imdbRating, m.releaseYear, m.watchCount);
+    void quick_sort(vector<Movie> & movies,int l,int r,int parameter){
+        if (l<r){
+            int pivot = partition(movies,l,r,parameter);
+            quick_sort(movies,l,pivot-1,parameter);
+            quick_sort(movies,pivot+1,r,parameter);
+        }
+            
     }
-    printf("\nTime taken by QuickSort: %.3f ms\n", timeTaken.count());
-    return 0;
+
+};
+
+int main(){
+    vector<Movie>movies;
+    Operations obj =Operations();
+    movies=obj.Load_movies("movies.csv");
+
+    cout<<" Before sort --"<<endl;
+    for (auto& o : movies){
+        o.Print_movie();
+    }
+    obj.quick_sort(movies,0,movies.size()-1,1);
+
+    cout<<" After sort --"<<endl;
+    for (auto &o : movies){
+        o.Print_movie();
+    }
+
+return 0;
 }
